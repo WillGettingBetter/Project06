@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Project01</display-name>
+	<context-param>
+		<param-name>EncodingMethod</param-name>    <!-- 编码格式 -->
+		<param-value>utf-8</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>com.eec.session.SessionCounter</listener-class>
+	</listener>
+	<filter>
+		<filter-name>UserFilter</filter-name>
+		<filter-class>com.eec.filter.UserFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserFilter</filter-name>
+		<url-pattern>/page/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.eec.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.eec.listener.HelloRequestListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.eec.controller.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>com.eec.controller.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>com.eec.controller.UserServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/RegisterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.eec.controller.ImageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<servlet-class>com.eec.controller.FileUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetFileServlet</servlet-name>
+		<servlet-class>com.eec.controller.GetFileServlet</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/ImageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<url-pattern>/FileUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetFileServlet</servlet-name>
+		<url-pattern>/GetFileServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

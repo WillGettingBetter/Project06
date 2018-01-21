@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+body{
+	margin: 0px;
+	padding: 0px;
+	/*插入背景图片*/
+}
+
+.top{
+	width:100% auto;
+	height:150px;
+	background-color:aqua;
+	position: relative;
+}
+.top h1{
+	font-size:50px;
+	position:absolute;
+	top:30px;
+	left:550px;
+}
+
+.content{
+	width:100% auto;
+	height:510px;
+	background-color:gray;
+	position: relative;
+}
+
+.content .form1{
+	width:400px;
+	height:220px;
+	font-size:30px;
+	line-height:50px;
+	position: absolute;
+	top:14px;
+	left:500px;
+}
+.sub1{
+	font-size:30px;
+	width:100px;
+	height:50px;
+	position: relative;
+	top: 30px;
+	left: 80px;
+}
+.name1,.tel1,.id1,.psw1,.birth1{
+	width:200px;
+	height:30px;
+}
